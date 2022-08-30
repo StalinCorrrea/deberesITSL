@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html ng-app="myApp" lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>http-request</title>
+
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+
+        <!-- Incluir AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <script src="js/app.js"></script>
+        
+    </head>    
+    <body>
+
+
+        <div class="container" ng-controller="customersCtrl">
+            
+            <h1>HTTP Request</h1>
+            <h4>Data dinámica</h4>
+            <hr>
+            
+            <table class="table table-striped">
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+
+                </tr>
+                <tr ng-repeat='per in myData' >
+                    <td>{{per.nombre}}</td>
+                    <td>{{per.telefono}}</td>
+                </tr>
+            </table>
+
+            <button class="btn btn-primary" ng-click="siguientes()">Siguientes</button>
+            <button class="btn btn-primary" ng-click="anteriores()">Anteriores</button>
+             <br>
+             {{posicion}}
+
+
+            <p>mi ip es: {{myData.geoplugin_request}}</p>
+
+             <br>
+            {{ myData | json }}
+
+        </div><!-- fin del listadoCtrl -->
+
+      
+    </body>
+</html>
